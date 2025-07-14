@@ -1,3 +1,50 @@
+ Setup Instructions
+Follow these steps to set up and run the application on your local machine.
+1. Prerequisites
+Python 3.8+ (Recommended to use Python 3.10 or newer)
+Google Gemini API Key: You'll need an API key from Google AI Studio.
+
+2. Clone the Repository (or Save the Code)
+If you have the code as a single file, save it as app.py in a new directory, e.g., rag-qa-agent.
+mkdir rag-qa-agent
+cd rag-qa-agent
+# Paste your app.py code into a file named app.py
+
+
+
+3. Create a Virtual Environment (Recommended)
+It's highly recommended to use a virtual environment to manage dependencies and avoid conflicts with other Python projects.
+4. Activate the Virtual Environment
+On Windows
+          .venv\Scripts\activate
+5. Install Dependencies
+Install all the required Python packages using pip
+pip install streamlit pypdf langchain-google-genai langchain-community faiss-cpu
+
+streamlit: For building the interactive web UI.
+pypdf: To extract text from PDF files.
+langchain-google-genai: Provides LangChain integrations for Google's Gemini models (embeddings and chat models).
+langchain-community: Contains various LangChain integrations, including FAISS vector stores and RecursiveCharacterTextSplitter.
+faiss-cpu: The FAISS library for efficient similarity search and clustering (CPU-only version).
+
+6. Configure your Google Gemini API Key
+Streamlit applications can securely store secrets. Create a folder named .streamlit in your project's root directory (the same directory where app.py is located). Inside .streamlit, create a file named secrets.toml.
+.streamlit/secrets.toml
+GEMINI_API_KEY="YOUR_GEMINI_API_KEY_HERE"
+
+7. Run the Application
+Once everything is set up, run the Streamlit app from your terminal with the virtual environment activated:
+streamlit run app.py
+
+
+
+
+========================================================================================================================================================================================================================================================================================================================================================================================================================================
+
+
+
+
+
 AI Document Q&A Agent with RAG
 This project implements an AI-powered Document Question-Answering Agent using Retrieval-Augmented Generation (RAG). It allows users to upload PDF and TXT documents, build a searchable knowledge base from their content, and then ask questions to get precise answers based only on the provided documents.
 
